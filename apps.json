@@ -39,7 +39,8 @@
           "size": 1553631,
           "sha256": "4ce044dba54e4e158872a6b7f2c875aa44ec8948930444aef3b87892d26025b8"
         }
-      ]
+      ],
+      "iconURL": "https://raw.githubusercontent.com/devinprater/apps/main/icons/itruvoice.png"
     }
   ],
   "news": []

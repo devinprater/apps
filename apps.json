@@ -1,0 +1,46 @@
+{
+  "name": "Devin Prater's Apps",
+  "identifier": "dev.devinprater.apps.source",
+  "sourceURL": "https://raw.githubusercontent.com/devinprater/apps/main/apps.json",
+  "website": "https://github.com/devinprater/apps",
+  "apps": [
+    {
+      "name": "iBestSpeech",
+      "bundleIdentifier": "com.devin.ibestspeech",
+      "developerName": "Devin Prater",
+      "subtitle": "Keynote Gold voices as system voices.",
+      "localizedDescription": "Keynote Gold voices as system voices on iPhone and iPad, working with VoiceOver, Spoken Content and anything using the system voices, all on the device and offline. Bring your own Keynote Gold engine file: the app imports it at run time.\n\nThis build includes voice data that is not part of the open code and belongs to its owners. It is included for personal accessibility use, is not covered by the code licence, and will be removed if a rights holder asks.",
+      "category": "utilities",
+      "versions": [
+        {
+          "version": "1.0.13",
+          "date": "2026-09-28T01:26:47Z",
+          "localizedDescription": "# iBestSpeech 1.0.13\n\nFourteen commits since 1.0.12, and two of them are worth the update on their\nown.\n\n**The app now has an icon.** 1.0.12 shipped without one — the archive had no\n`Assets.car` and `Info.plist` never declared `CFBundleIconName`, which is what\nApp Store Connect rejects with ITMS-90022. It installs with a proper icon now.\n\n**The preview no longer stops dead.** The ellipsis fix already ran in the\nVoiceOver extension, but the app's own preview handed the engine the text as\ntyped — so the same notification spoke correctly in VoiceOver and stopped in\nthe preview, which is the path you test with. The preview now runs the same\ntext layer.\n\n**You can load a whole NVDA addon.** Instead of finding the right DLL inside\nan addon by hand, pick the `.nvda-addon` itself and the voices come out of it.\nAn addon is an ordinary zip, and the archives disagree about where a DLL\nlives — depth 1 to 6, some Windows-built with backslashes where the spec wants\nslashes, one keeping its engine outside `synthDrivers/`, four of the twelve on\nthis machine containing no DLL at all, and the largest one belonging to a PDF\nlibrary. So nothing is decided by name, path or size: every candidate is handed\nto the engine and kept only if it actually speaks. Verified against the real\narchives — the BestSpeech addon yields all thirteen of its voices, and the four\nwithout a Keynote Gold engine yield nothing, with no false positives.\n\n**The About screen shows the real version and build**, and the all-caps section\nheaders are gone — the engine spells an all-caps run letter by letter, so\n\"Your voice files\" was being read out as a string of capitals by the app's own\nvoices.\n\nAlso in this release: the signed App Store build and TestFlight upload path,\nand the extension's version can no longer drift from the app's, which is an\nupload failure waiting to happen.\n\nThe public build still carries no voice data. The tables belong to the people\nwho made them; you import your own Keynote Gold file, and the files you load\nstay on your device.\n",
+          "downloadURL": "https://github.com/devinprater/iBestSpeech/releases/download/v1.0.13/iBestSpeech-1.0.13-sideload.ipa",
+          "size": 7000717,
+          "sha256": "bbbd40764ae0c7b848f29042bb1f2a39ea7a3b17637dbca86144f8296d52b134"
+        }
+      ],
+      "iconURL": "https://raw.githubusercontent.com/devinprater/apps/main/icons/ibestspeech.png"
+    },
+    {
+      "name": "iTruVoice",
+      "bundleIdentifier": "com.devin.itruvoice",
+      "developerName": "Devin Prater",
+      "subtitle": "TruVoice voices as system voices.",
+      "localizedDescription": "TruVoice voices (Peter, Julia, Sidney and the rest) as system voices on iPhone and iPad, working with VoiceOver, Spoken Content and anything using the system voices, all on the device and offline.\n\nThis build includes voice data that is not part of the open code and belongs to its owners: Centigram Communications, whose TruVoice later passed to Lernout & Hauspie, ScanSoft and Nuance. It is included for personal accessibility use, is not covered by the code licence, and will be removed if a rights holder asks.",
+      "category": "utilities",
+      "versions": [
+        {
+          "version": "1.0.5",
+          "date": "2026-09-28T01:20:03Z",
+          "localizedDescription": "# iTruVoice 1.0.5\n\nThree engine-layer fixes, all measured against the built engine.\n\n**Your name, said right.** The engine stressed the second syllable\n(\"dev-IN\") while Kevin takes the first. The user lexicon now pins Devin to\nKevin-with-a-D, one entry covering every casing, and the possessive comes\nalong (\"Devin's\" reads with the same stress). The old Linux entry is gone:\ntitle-case already read exactly as lowercase, and all-caps spell-out happens\nbefore the lexicon can ever see the word.\n\n**\"VoiceOver\", said as two words.** The compound read as voice plus \"eover\".\nIt now speaks with exactly the phonemes two-word \"voice over\" does, verified\nbyte-identical on every casing.\n\n**Twice as loud.** The engine peaks at 30–74% of full scale across the ten\nvoices, so full volume sat below Alex and Keynote Gold. A base lift doubles\nevery path — VoiceOver and preview alike — with VoiceOver's own volume still\nscaling above it, and volume 0 still silencing.\n\nVerified by the host corpus check and the CoreChecks suite, which now pins\nthe boost and its clamping.\n",
+          "downloadURL": "https://github.com/devinprater/iTruVoice/releases/download/v1.0.5/iTruVoice-1.0.5-sideload.ipa",
+          "size": 1553631,
+          "sha256": "4ce044dba54e4e158872a6b7f2c875aa44ec8948930444aef3b87892d26025b8"
+        }
+      ]
+    }
+  ],
+  "news": []
+}

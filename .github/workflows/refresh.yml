@@ -1,0 +1,32 @@
+name: refresh-source
+
+# The source follows the app repos: once a day, plus on demand, check each
+# app's latest release and prepend a version entry when the tag moved. Old
+# versions stay listed. Commits only when apps.json actually changed.
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - run: python3 update_source.py
+      - run: |
+          set -euo pipefail
+          if git diff --quiet -- apps.json; then
+            echo "no new versions"
+            exit 0
+          fi
+          git config user.name "devinprater"
+          git config user.email "r.d.t.prater@gmail.com"
+          git add apps.json
+          git commit -m "chore(source): pick up new app releases"
+          git push

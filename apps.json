@@ -13,6 +13,14 @@
       "category": "utilities",
       "versions": [
         {
+          "version": "1.0.14",
+          "date": "2026-09-28T07:43:00Z",
+          "localizedDescription": "# iBestSpeech 1.0.14\n\nFour pronunciation fixes, all measured against the built engine first.\n\n**LLM and LLMs name every letter.** The rules collapse the doubled L\n(\"llama\" needs that; initials don't), so \"LLMs\" read \"ell-em-ess\". Spaced\nletters follow the file's own convention (MIDI, HDMI).\n\n**Y'all stays one syllable.** The apostrophe split it into \"yuh-all\";\nplain \"yawl\" is byte-identical to \"yall\" on every English build, which is\nthe wanted sound. Both casings.\n\n**Full-width punctuation folds to ASCII.** A full-width question mark made\nthe 1995 build return no audio at all for the whole phrase — which is how\na notification lost everything after its Chinese run. U+FF01–U+FF5E now\nfold in the same pass as the other typographic forms.\n\n**Ubuntu is \"oo boon too\" again.** The source had drifted to \"too boon\ntoo\" while the shipped build still carried the right reading; regenerating\nrestores it with no behavior change.\n\nVerified by the SSML suite (170 checks) and the engine word-path probes\nbehind each entry.\n",
+          "downloadURL": "https://github.com/devinprater/iBestSpeech/releases/download/v1.0.14/iBestSpeech-1.0.14-sideload.ipa",
+          "size": 7001037,
+          "sha256": "9789739ba27b2e3e32e1deaa8b14c9b6dd6263dd0dbbfb38f4a91de8dbfb16a8"
+        },
+        {
           "version": "1.0.13",
           "date": "2026-09-28T01:26:47Z",
           "localizedDescription": "# iBestSpeech 1.0.13\n\nFourteen commits since 1.0.12, and two of them are worth the update on their\nown.\n\n**The app now has an icon.** 1.0.12 shipped without one — the archive had no\n`Assets.car` and `Info.plist` never declared `CFBundleIconName`, which is what\nApp Store Connect rejects with ITMS-90022. It installs with a proper icon now.\n\n**The preview no longer stops dead.** The ellipsis fix already ran in the\nVoiceOver extension, but the app's own preview handed the engine the text as\ntyped — so the same notification spoke correctly in VoiceOver and stopped in\nthe preview, which is the path you test with. The preview now runs the same\ntext layer.\n\n**You can load a whole NVDA addon.** Instead of finding the right DLL inside\nan addon by hand, pick the `.nvda-addon` itself and the voices come out of it.\nAn addon is an ordinary zip, and the archives disagree about where a DLL\nlives — depth 1 to 6, some Windows-built with backslashes where the spec wants\nslashes, one keeping its engine outside `synthDrivers/`, four of the twelve on\nthis machine containing no DLL at all, and the largest one belonging to a PDF\nlibrary. So nothing is decided by name, path or size: every candidate is handed\nto the engine and kept only if it actually speaks. Verified against the real\narchives — the BestSpeech addon yields all thirteen of its voices, and the four\nwithout a Keynote Gold engine yield nothing, with no false positives.\n\n**The About screen shows the real version and build**, and the all-caps section\nheaders are gone — the engine spells an all-caps run letter by letter, so\n\"Your voice files\" was being read out as a string of capitals by the app's own\nvoices.\n\nAlso in this release: the signed App Store build and TestFlight upload path,\nand the extension's version can no longer drift from the app's, which is an\nupload failure waiting to happen.\n\nThe public build still carries no voice data. The tables belong to the people\nwho made them; you import your own Keynote Gold file, and the files you load\nstay on your device.\n",
@@ -31,6 +39,14 @@
       "localizedDescription": "TruVoice voices (Peter, Julia, Sidney and the rest) as system voices on iPhone and iPad, working with VoiceOver, Spoken Content and anything using the system voices, all on the device and offline.\n\nThis build includes voice data that is not part of the open code and belongs to its owners: Centigram Communications, whose TruVoice later passed to Lernout & Hauspie, ScanSoft and Nuance. It is included for personal accessibility use, is not covered by the code licence, and will be removed if a rights holder asks.",
       "category": "utilities",
       "versions": [
+        {
+          "version": "1.0.6",
+          "date": "2026-09-29T01:28:34Z",
+          "localizedDescription": "# iTruVoice 1.0.6\n\nTwo sideload variants of the same build — pick the rate you prefer:\n\n- **16k (hifi)**: OpenTV's own third sample rate. Genuinely more\n  bandwidth than the classic rate, same voices. Try this one first.\n- **11k (classic)**: the original TruVoice desktop rate.\n\nBoth include 20 voices (10 English + 10 Spanish, the Spanish under\nes-ES), the engine-level phoneme fixes for app and brand names\n(Gmail, Dyson, WhatsApp, GitHub, and 14 more), and the text-layer\ndictionary (SideStore, ChatGPT, 300+ more).\n\nUnsigned: import with SideStore and sign with your own certificate.\n",
+          "downloadURL": "https://github.com/devinprater/iTruVoice/releases/download/v1.0.6/iTruVoice-1.0.6-11k-sideload.ipa",
+          "size": 5563652,
+          "sha256": "06f083bb69f17dbf48ce977c8473f7c0647b994b5277ecd26c6216109ff98686"
+        },
         {
           "version": "1.0.5",
           "date": "2026-09-28T01:20:03Z",

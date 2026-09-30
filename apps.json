@@ -40,6 +40,14 @@
       "category": "utilities",
       "versions": [
         {
+          "version": "1.0.7",
+          "date": "2026-09-29T16:28:33Z",
+          "localizedDescription": "# iTruVoice 1.0.7\n\nTwo sideload variants of the same build — pick the rate you prefer:\n\n- **16k (hifi)**: OpenTV's own third sample rate. Genuinely more\n  bandwidth than the classic rate, same voices. Try this one first.\n- **11k (classic)**: the original TruVoice desktop rate.\n\nNew since 1.0.6: the Spanish pitch fix (uniform intonation across\nvoices, lower floor) from upstream, plus everything in 1.0.6: 20\nvoices (10 English + 10 Spanish under es-ES), engine-level phoneme\nfixes for app and brand names, and the text-layer dictionary.\n\nUnsigned: import with SideStore and sign with your own certificate.\n",
+          "downloadURL": "https://github.com/devinprater/iTruVoice/releases/download/v1.0.7/iTruVoice-1.0.7-11k-sideload.ipa",
+          "size": 5564156,
+          "sha256": "13214d2ed12164ea2fbfc9c9cfe6c53c915e71958be18837aa0c6d84ba890294"
+        },
+        {
           "version": "1.0.6",
           "date": "2026-09-29T01:28:34Z",
           "localizedDescription": "# iTruVoice 1.0.6\n\nTwo sideload variants of the same build — pick the rate you prefer:\n\n- **16k (hifi)**: OpenTV's own third sample rate. Genuinely more\n  bandwidth than the classic rate, same voices. Try this one first.\n- **11k (classic)**: the original TruVoice desktop rate.\n\nBoth include 20 voices (10 English + 10 Spanish, the Spanish under\nes-ES), the engine-level phoneme fixes for app and brand names\n(Gmail, Dyson, WhatsApp, GitHub, and 14 more), and the text-layer\ndictionary (SideStore, ChatGPT, 300+ more).\n\nUnsigned: import with SideStore and sign with your own certificate.\n",

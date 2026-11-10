@@ -13,6 +13,14 @@
       "category": "utilities",
       "versions": [
         {
+          "version": "1.1",
+          "date": "2026-11-09T22:29:04Z",
+          "localizedDescription": "Sideloadable IPA for iPhone 16 (LMYZ738293). Install via iLoader/AltStore/Sideloadly.",
+          "downloadURL": "https://github.com/devinprater/iBestSpeech/releases/download/v1.1/iBestSpeech-sideload.ipa",
+          "size": 4732316,
+          "sha256": "f9c0b9ba9ed9337c968a75c5e32a56dda70d3a09cb3c44cb7641b20ce60ffa29"
+        },
+        {
           "version": "1.0.14",
           "date": "2026-09-28T07:43:00Z",
           "localizedDescription": "# iBestSpeech 1.0.14\n\nFour pronunciation fixes, all measured against the built engine first.\n\n**LLM and LLMs name every letter.** The rules collapse the doubled L\n(\"llama\" needs that; initials don't), so \"LLMs\" read \"ell-em-ess\". Spaced\nletters follow the file's own convention (MIDI, HDMI).\n\n**Y'all stays one syllable.** The apostrophe split it into \"yuh-all\";\nplain \"yawl\" is byte-identical to \"yall\" on every English build, which is\nthe wanted sound. Both casings.\n\n**Full-width punctuation folds to ASCII.** A full-width question mark made\nthe 1995 build return no audio at all for the whole phrase — which is how\na notification lost everything after its Chinese run. U+FF01–U+FF5E now\nfold in the same pass as the other typographic forms.\n\n**Ubuntu is \"oo boon too\" again.** The source had drifted to \"too boon\ntoo\" while the shipped build still carried the right reading; regenerating\nrestores it with no behavior change.\n\nVerified by the SSML suite (170 checks) and the engine word-path probes\nbehind each entry.\n",
